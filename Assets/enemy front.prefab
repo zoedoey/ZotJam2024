@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4578709442710019302}
   - component: {fileID: 3143741475273932079}
   - component: {fileID: 4756164841194781747}
+  - component: {fileID: 669386429577448590}
   m_Layer: 0
   m_Name: enemy front
   m_TagString: Untagged
@@ -136,3 +137,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!111 &669386429577448590
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9149250840919577159}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
