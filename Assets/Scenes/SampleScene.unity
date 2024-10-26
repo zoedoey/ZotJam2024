@@ -160,6 +160,10 @@ MonoBehaviour:
   left: {fileID: 21300000, guid: e8433afb6ee2249469424bba6af0861e, type: 3}
   right: {fileID: 21300000, guid: 4aa192eb482244906bcb69e8312e3d1d, type: 3}
   front: {fileID: 21300000, guid: a1ac2c5c79c6e410f908c79264221c79, type: 3}
+  BulletSpawnPoint: {fileID: 0}
+  bullet: {fileID: 0}
+  up: {x: 0, y: 1}
+  force: 10
 --- !u!212 &416574469
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -357,6 +361,7 @@ GameObject:
   - component: {fileID: 1861502202}
   - component: {fileID: 1861502201}
   - component: {fileID: 1861502200}
+  - component: {fileID: 1861502203}
   m_Layer: 0
   m_Name: enemy front
   m_TagString: Untagged
@@ -376,6 +381,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a200f6e367283f545bde456be17a45d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  renderer: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  front: {fileID: 0}
+  BulletSpawnPoint: {fileID: 0}
+  bullet: {fileID: 0}
+  up: {x: 0, y: 1}
+  force: 10
 --- !u!212 &1861502201
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -443,6 +459,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1861502203
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861502199}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
