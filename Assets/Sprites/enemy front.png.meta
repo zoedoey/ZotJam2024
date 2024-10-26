@@ -113,12 +113,18 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 57ef2c6118b864246b4c2988cc2fa137, type: 3}
+      name: enemy left
+    - texture: {fileID: 2800000, guid: ed3b2057d699a439e9e48e911a4c4f10, type: 3}
+      name: enemy right
+    - texture: {fileID: 2800000, guid: 11b44023af40f4f1dadee80eda7e93de, type: 3}
+      name: enemy down
     nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
