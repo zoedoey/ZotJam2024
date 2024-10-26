@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     public Sprite left;
     public Sprite right;
     public Sprite front;
+
     //renderer.sprite = left
     //
 
@@ -48,12 +49,31 @@ public class PlayerMovement : MonoBehaviour {
         //animator.SetFloat("Vertical", movement.y);
         //animator.SetFloat("Speed", movement.sqrMagnitude);
 
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
 
     }
 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    public Transform BulletSpawnPoint;
+    public GameObject bullet;
+    public Vector2 up;
+    public float force = 10f;
+
+    void Shoot()
+    {
+        GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
+        newBullet.GetComponent<Rigidbody2D>().velocity = movement.normalized * force;
+        if (movement.x == 0 && movement.y == 0)
+        {
+            newBullet.GetComponent<Rigidbody2D>().velocity = up * force;
+        }
+        Destroy(newBullet, 3);
     }
 }
