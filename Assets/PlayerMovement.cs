@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Threading;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -16,7 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     public Sprite front;
     //renderer.sprite = left
     //
-
+    // add the back animation for up
 
     // Start is called before the first frame update
     //void Start()
