@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2073268550115489361}
   - component: {fileID: 3793253816642353453}
   - component: {fileID: 1908986648559207902}
+  - component: {fileID: -9111333758456099229}
   m_Layer: 0
   m_Name: Player front
   m_TagString: Untagged
@@ -127,3 +128,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 3793253816642353453}
+--- !u!111 &-9111333758456099229
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461669988592557295}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d5bd5428ceddf414aa6b3940f6dad5cf, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
