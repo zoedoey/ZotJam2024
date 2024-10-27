@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DefeatRestart : MonoBehaviour
+public class DefeatButtons : MonoBehaviour
 {
     public void MainMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync("Main Menu 2");
     }
 }
