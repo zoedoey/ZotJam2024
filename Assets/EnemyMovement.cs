@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//NOTES:
+// detect edge of screen
+
 public class EnemyMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -12,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     public Sprite left;
     public Sprite right;
     public Sprite front;
+    public Sprite back;
     // Start is called before the first frame update
     //void Start()
     //{
@@ -35,9 +39,18 @@ public class EnemyMovement : MonoBehaviour
         {
             renderer.sprite = right;
         }
-        if (movement.x == 0)
+        if (movement.x == 0 && movement.y == 0)
         {
             renderer.sprite = front;
+        }
+        if (movement.y > 0)
+        {
+            renderer.sprite = front;
+
+        }
+        if (movement.y < 0)
+        {
+            renderer.sprite = back;
         }
         //animator.SetFloat("Horizontal", movement.x);
         //animator.SetFloat("Vertical", movement.y);
@@ -46,6 +59,15 @@ public class EnemyMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            movement = Vector2.down;      // Move down when Up Arrow is pressed
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            movement = Vector2.up;        // Move up when Down Arrow is pressed
         }
 
     }

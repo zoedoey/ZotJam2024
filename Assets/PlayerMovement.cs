@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour {
     public Sprite left;
     public Sprite right;
     public Sprite front;
+    public Sprite back;
 
     //renderer.sprite = left
     //
@@ -40,6 +42,15 @@ public class PlayerMovement : MonoBehaviour {
             renderer.sprite = right;
         }
         if (movement.x == 0)
+        {
+            renderer.sprite = front;
+        }
+        if (movement.y > 0)
+        {
+            renderer.sprite = back;
+            
+        }
+        if (movement.y < 0)
         {
             renderer.sprite = front;
         }
