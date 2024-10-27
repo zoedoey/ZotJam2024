@@ -580,8 +580,10 @@ MonoBehaviour:
   timer: 0
   spawnPoint: {x: 0, y: 0}
   renderer: {fileID: 756584203}
-  greyCrack: {fileID: 21300000, guid: 3f7d17de6afa94fefbbb3b2497da0463, type: 3}
-  redCrack: {fileID: 21300000, guid: 2f7671aa70b404346b09ec66587d9a36, type: 3}
+  greyCrack: {fileID: 21300000, guid: 7fcbab06d3ea14c5e8b209a946e89a27, type: 3}
+  redCrack: {fileID: 21300000, guid: 47b917825931642fe856ee249e493366, type: 3}
+  spritePrefab: {fileID: 0}
+  exclusionRadius: 1
 --- !u!212 &756584203
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -643,7 +645,7 @@ Transform:
   m_GameObject: {fileID: 756584201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.63, y: 3.04, z: 0}
+  m_LocalPosition: {x: 8.14, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -678,7 +680,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1378,7 +1380,7 @@ SpriteRenderer:
   m_SortingLayerID: -305197049
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 34213b52052a64b50a0792452e985731, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9fc07c84ef44446b8cade9d101d49e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

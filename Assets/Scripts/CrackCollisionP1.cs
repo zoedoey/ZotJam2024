@@ -8,15 +8,14 @@ using UnityEngine;
 
 public class CrackCollisionP1 : MonoBehaviour
 {
-
     public SpriteRenderer renderer;
     public Sprite redCrack;
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (renderer.sprite == redCrack)
         {
             Destroy(this.gameObject);
+
         }
     }
 }
