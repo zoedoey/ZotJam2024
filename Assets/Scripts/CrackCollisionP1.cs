@@ -12,7 +12,7 @@ public class CrackCollisionP1 : MonoBehaviour
     public Sprite redCrack;
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (renderer.sprite == redCrack)
+        if (renderer.sprite == redCrack)    /// don't destroy change to grey, add some more collisions!!
         {
             Destroy(this.gameObject);
 
