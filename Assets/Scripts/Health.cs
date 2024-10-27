@@ -4,6 +4,8 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
+// I think use the collider classes in here where like if collide then i-= 1 and if zero, then we disable sprite renderer
+
 public class Health : MonoBehaviour
 {
     public int health;
