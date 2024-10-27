@@ -18,7 +18,7 @@ public class enemyHealth : MonoBehaviour
 
         if (health < 1)
         {
-            SceneManager.LoadSceneAsync("Victory End Scene");
+            SceneManager.LoadSceneAsync("Victory Screen");
         }
 
         for (int i = 0; i < hearts.Length; i++)
