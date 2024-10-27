@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             renderer.sprite = right;
         }
-        if (movement.x == 0)
+        if (movement.x == 0 && movement.y == 0)
         {
             renderer.sprite = front;
         }
