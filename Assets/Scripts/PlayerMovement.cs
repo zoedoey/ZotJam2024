@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
-//NOTES:
-// detect edge of screen
+public class PlayerMovement : MonoBehaviour {
 
-public class EnemyMovement : MonoBehaviour
-{
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Animator animator;
@@ -16,17 +14,17 @@ public class EnemyMovement : MonoBehaviour
     public Sprite right;
     public Sprite front;
     public Sprite back;
-    // Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
 
-    // INVERT UP AND DOWN
+    //renderer.sprite = left
+    //
+
+
+    // Start is called before the first frame upd
 
     // Update is called once per frame
-    void Update() // updates the players movement
+    void Update()
     {
+        // * Time.deltaTime * moveSpeed
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         //transform.position = new Vector2(transform.position.x + movement.x, transform.position.y + movement.y);
@@ -45,12 +43,12 @@ public class EnemyMovement : MonoBehaviour
         }
         if (movement.y > 0)
         {
-            renderer.sprite = front;
-
+            renderer.sprite = back;
+            
         }
         if (movement.y < 0)
         {
-            renderer.sprite = back;
+            renderer.sprite = front;
         }
         //animator.SetFloat("Horizontal", movement.x);
         //animator.SetFloat("Vertical", movement.y);
@@ -61,22 +59,13 @@ public class EnemyMovement : MonoBehaviour
             Shoot();
         }
 
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            movement = Vector2.down;      // Move down when Up Arrow is pressed
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            movement = Vector2.up;        // Move up when Down Arrow is pressed
-        }
-
     }
-    void FixedUpdate() //fixes the update in terms of time/speed
+
+    void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
-    //Bullet mechanics
     public Transform BulletSpawnPoint;
     public GameObject bullet;
     public Vector2 up = new Vector2(0, 1);
@@ -94,4 +83,3 @@ public class EnemyMovement : MonoBehaviour
         Destroy(newBullet, 3);
     }
 }
-
