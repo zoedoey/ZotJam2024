@@ -11,6 +11,7 @@ public class BulletSpawner : MonoBehaviour
     public float firingRate = 1f;
     public float timer = 0f;
 
+    // Code tutorial from Sidereum Games
     // Update is called once per frame
     void Update()
     {

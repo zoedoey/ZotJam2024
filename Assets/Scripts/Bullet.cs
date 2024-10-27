@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     public float timer = 0f;
     public Vector2 spawnPoint;
 
+    // Code tutorial from Sidereum Games
     void Start()
     {
         spawnPoint = new Vector2(transform.position.x, transform.position.y);

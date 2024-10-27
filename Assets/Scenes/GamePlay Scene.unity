@@ -601,7 +601,15 @@ PrefabInstance:
       value: BulletSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 4281360932935954492, guid: bb703511b07c041c1bb0f6798f5b9fcf, type: 3}
+      propertyPath: bulletLife
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281360932935954492, guid: bb703511b07c041c1bb0f6798f5b9fcf, type: 3}
       propertyPath: firingRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281360932935954492, guid: bb703511b07c041c1bb0f6798f5b9fcf, type: 3}
+      propertyPath: bulletSpeed
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
