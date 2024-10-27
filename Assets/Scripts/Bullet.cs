@@ -8,8 +8,11 @@ public class Bullet : MonoBehaviour
     public float bulletSpeed = 1f;
     public float rotation = 0f;
     public float timer = 0f;
+    public GameObject health;
     public Vector2 spawnPoint;
     public Rigidbody2D rb;
+    public GameObject bullet;
+    public int playerHealth;
 
     // Code tutorial from Sidereum Games
     void Start()
@@ -27,5 +30,15 @@ public class Bullet : MonoBehaviour
 
         timer += Time.deltaTime;
         
+    }
+
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.collider.CompareTag("Player"))
+        {
+            Debug.Log("Collided");
+            Health.instance.health--;
+            Destroy(gameObject);
+        }
     }
 }

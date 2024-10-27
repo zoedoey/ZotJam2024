@@ -18,22 +18,62 @@ public class BulletSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= firingRate)
         {
-            int type = UnityEngine.Random.Range(0, 1);
-            if (type == 0)
+            timer = 0;
+            int type = UnityEngine.Random.Range(0, 2);
+            if (type == 0) //shotgun level 1
             {
                 Fire(0);
                 Fire(45);
                 Fire(-45);
             }
-            timer = 0;
+            if (type == 1) //double small arrowhead
+            {
+                timer = -1;
+                Fire(0, new Vector2(-4, 3));
+                Fire(0, new Vector2(0, 2));
+                Fire(0, new Vector2(4, 3));
+                Fire(0, new Vector2(-4, 1));
+                Fire(0);
+                Fire(0, new Vector2(4, 1));
+            }
+            if (type == 2) //shotgun level 2
+            {
+                Fire(0);
+                Fire(15);
+                Fire(45);
+                Fire(-15);
+                Fire(-45);
+            }
+            if (type == 3) //shotgun level 3
+            {
+                Fire(0);
+                Fire(15);
+                Fire(30);
+                Fire(45);
+                Fire(-15);
+                Fire(-30);
+                Fire(-45);
+            }
+            if (type == 4) //shotgun level 1
+            {
+                Fire(0);
+                Fire(45);
+                Fire(-45);
+            }
+            if (type == 5) //shotgun level 1
+            {
+                Fire(0);
+                Fire(45);
+                Fire(-45);
+            }
         }
     }
 
-    void Fire(float rotation)
+    void Fire(float rotation, Vector3 offset = default)
     {
         if (bullet)
         {
-            spawnedBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            spawnedBullet = Instantiate(bullet, transform.position + offset, Quaternion.identity);
             spawnedBullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
             spawnedBullet.GetComponent<Bullet>().bulletLife = bulletLife;
             spawnedBullet.GetComponent<Bullet>().rotation = rotation;
