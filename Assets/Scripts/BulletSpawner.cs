@@ -10,9 +10,11 @@ public class BulletSpawner : MonoBehaviour
     public float bulletSpeed = 1f;
     public float firingRate = 1f;
     public float timer = 0f;
+    public float timer2 = 0f;
 
     [SerializeField] private AudioClip shotSoundClip;
     private AudioSource audioSource;
+    public int nextpatterntype;
     // Code tutorial from Sidereum Games
     // Update is called once per frame
     private void Start()
@@ -23,37 +25,45 @@ public class BulletSpawner : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        timer2 += Time.deltaTime;
         if (timer >= firingRate)
         {
             timer = 0;
-            int type = UnityEngine.Random.Range(0, 6);
+            int type = nextpatterntype;
             if (type == 0) //shotgun level 1
             {
                 Fire(0);
                 Fire(45);
                 Fire(-45);
+                nextpatterntype = 3;
             }
             if (type == 1) //double small arrowhead
             {
-                timer = -1;
-                Fire(0, new Vector2(-4, 3));
-                Fire(0, new Vector2(0, 2));
-                Fire(0, new Vector2(4, 3));
-                Fire(0, new Vector2(-4, 1));
+                timer = 0.3f;
+                Fire(0, new Vector2(3, 0));
+                Fire(0, new Vector2(-3, 0));
                 Fire(0);
-                Fire(0, new Vector2(4, 1));
+                nextpatterntype = 2;
             }
-            if (type == 2) //shotgun level 2
+            if (type == 2) //double small arrowhead pt2
+            {
+                Fire(0, new Vector2(1.5f, 0));
+                Fire(0, new Vector2(-1.5f, 0));
+                Fire(30);
+                Fire(-30);
+                nextpatterntype = UnityEngine.Random.Range(0, 7);
+            }
+            if (type == 3) //shotgun level 2
             {
                 Fire(0);
                 Fire(15);
                 Fire(45);
                 Fire(-15);
                 Fire(-45);
+                nextpatterntype = 4;
             }
-            if (type == 3) //shotgun level 3
+            if (type == 4) //shotgun level 3
             {
-                timer = -1;
                 Fire(0);
                 Fire(15);
                 Fire(30);
@@ -61,23 +71,28 @@ public class BulletSpawner : MonoBehaviour
                 Fire(-15);
                 Fire(-30);
                 Fire(-45);
+                nextpatterntype = UnityEngine.Random.Range(0, 7);
             }
-            if (type == 4) //row of five
+            if (type == 5) //row of five
             {
+                timer = 0.3f;
                 Fire(0);
                 Fire(0, new Vector2(2, 0));
                 Fire(0, new Vector2(-2, 0));
                 Fire(0, new Vector2(4, 0));
                 Fire(0, new Vector2(-4, 0));
-                type = 5;
+                nextpatterntype = 6;
             }
-            if (type == 5) //row of four
+            if (type == 6) //row of four
             {
-                Fire(0, new Vector2(1, 1));
-                Fire(0, new Vector2(-1, 1));
-                Fire(0, new Vector2(3, 1));
-                Fire(0, new Vector2(-3, 1));
+                Fire(0, new Vector2(1, 0));
+                Fire(0, new Vector2(-1, 0));
+                Fire(0, new Vector2(3, 0));
+                Fire(0, new Vector2(-3, 0));
+                nextpatterntype = UnityEngine.Random.Range(0, 7);
             }
+            Fire(0, new Vector2(8, 0));
+            Fire(0, new Vector2(-8, 0));
             if (timer == 6)
             {
                 Destroy(gameObject);
@@ -93,7 +108,7 @@ public class BulletSpawner : MonoBehaviour
             audioSource.PlayOneShot(shotSoundClip);
     
             spawnedBullet = Instantiate(bullet, transform.position + offset, Quaternion.identity);
-            spawnedBullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed - 2;
+            spawnedBullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed * (1 + timer2/60);
             spawnedBullet.GetComponent<Bullet>().bulletLife = bulletLife;
             spawnedBullet.GetComponent<Bullet>().rotation = rotation;
             spawnedBullet.transform.rotation = transform.rotation;
