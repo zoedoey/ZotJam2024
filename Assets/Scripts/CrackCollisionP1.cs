@@ -9,6 +9,7 @@ using UnityEngine;
 public class CrackCollisionP1 : MonoBehaviour
 {
     public SpriteRenderer renderer;
+    public Sprite greyCrack;
     public Sprite redCrack;
     void OnTriggerEnter2D(Collider2D other)
     {
