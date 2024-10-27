@@ -126,6 +126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af34016fb965a05428b7807ebd629a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletLife: 1
+  bulletSpeed: 1
+  rotation: 0
+  timer: 0
+  spawnPoint: {x: 0, y: 0}
+  rb: {fileID: 3495506085910964127}
 --- !u!60 &8477938337852825284
 PolygonCollider2D:
   m_ObjectHideFlags: 0

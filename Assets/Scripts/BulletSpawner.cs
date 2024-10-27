@@ -18,19 +18,25 @@ public class BulletSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= firingRate)
         {
-            Fire();
+            int type = UnityEngine.Random.Range(0, 1);
+            if (type == 0)
+            {
+                Fire(0);
+                Fire(45);
+                Fire(-45);
+            }
             timer = 0;
         }
     }
 
-    void Fire()
+    void Fire(float rotation)
     {
         if (bullet)
         {
             spawnedBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             spawnedBullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
             spawnedBullet.GetComponent<Bullet>().bulletLife = bulletLife;
-
+            spawnedBullet.GetComponent<Bullet>().rotation = rotation;
             spawnedBullet.transform.rotation = transform.rotation;
         }
     }
