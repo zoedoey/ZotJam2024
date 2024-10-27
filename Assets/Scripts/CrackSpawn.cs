@@ -20,13 +20,14 @@ public class CrackSpawn : MonoBehaviour
     void Update()
     {
         renderer.sprite = greyCrack;
-        if (timer > 2.5f)
-        {
-            renderer.sprite = redCrack;
-        }
+        //if (timer > f)
+        //{
+        //    renderer.sprite = redCrack;
+        //}
         if (timer > crackLife)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            renderer.sprite = redCrack;
         }
 
         timer += Time.deltaTime;

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1908986648559207902}
   - component: {fileID: -9111333758456099229}
   - component: {fileID: 1056514366066818314}
+  - component: {fileID: 947181820660118380}
   m_Layer: 0
   m_Name: Player front
   m_TagString: Untagged
@@ -135,7 +136,6 @@ MonoBehaviour:
   right: {fileID: 21300000, guid: 4aa192eb482244906bcb69e8312e3d1d, type: 3}
   front: {fileID: 21300000, guid: a1ac2c5c79c6e410f908c79264221c79, type: 3}
   back: {fileID: 21300000, guid: 4c53fae2aab014782955e7361a86fb81, type: 3}
-  camera: {fileID: 0}
   BulletSpawnPoint: {fileID: 4390644178563309590}
   bullet: {fileID: 7152302733224740745, guid: cb1180925b6d4465997849a83622f660, type: 3}
   up: {x: 0, y: 1}
@@ -190,3 +190,38 @@ CircleCollider2D:
   m_Offset: {x: -0.07164502, y: -0.08955622}
   serializedVersion: 2
   m_Radius: 0.5655086
+--- !u!58 &947181820660118380
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461669988592557295}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.87
