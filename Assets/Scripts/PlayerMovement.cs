@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
+// go against the wall, player slides, enemy slides 
+// ghost enemy can't go diagonal
+
 public class PlayerMovement : MonoBehaviour {
 
     public float moveSpeed = 4f;
@@ -59,6 +62,11 @@ public class PlayerMovement : MonoBehaviour {
         //animator.SetFloat("Vertical", movement.y);
         //animator.SetFloat("Speed", movement.sqrMagnitude);
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+
     }
 
     void FixedUpdate()
@@ -66,13 +74,20 @@ public class PlayerMovement : MonoBehaviour {
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
-    void OnCollisionEnter2D(Collision2D collider)
+    public Transform BulletSpawnPoint;
+    public GameObject bullet;
+    public Vector2 up = new Vector2(0, 1);
+    public float force = 10f;
+
+    void Shoot()
     {
-        if (collider.collider.CompareTag("Bullet"))
+        GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
+        newBullet.GetComponent<Rigidbody2D>().velocity = movement.normalized * force;
+        if (movement.x == 0 && movement.y == 0)
         {
-            Debug.Log("Collided");
-            audioSource.clip = damageSoundClip;
-            audioSource.PlayOneShot(damageSoundClip);
+            // Need to get this to work, should shoot up when player isn't moving
+            newBullet.GetComponent<Rigidbody2D>().velocity = up * force;
         }
+        Destroy(newBullet, 3);
     }
 }
