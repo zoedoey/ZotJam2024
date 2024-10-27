@@ -81,6 +81,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject bullet;
     public Vector2 up = new Vector2(0, 1);
     public float force = 10f;
+    public int counter;
 
     void Shoot()
     {
@@ -88,7 +89,6 @@ public class EnemyMovement : MonoBehaviour
         newBullet.GetComponent<Rigidbody2D>().velocity = movement.normalized * force;
         if (movement.x == 0 && movement.y == 0)
         {
-            // Need to get this to work, should shoot up when player isn't moving
             newBullet.GetComponent<Rigidbody2D>().velocity = up * force;
         }
         Destroy(newBullet, 3);

@@ -17,13 +17,9 @@ public class PlayerMovement : MonoBehaviour {
 
     //renderer.sprite = left
     //
-    // add the back animation for up
 
-    // Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
+
+    // Start is called before the first frame upd
 
     // Update is called once per frame
     void Update()
