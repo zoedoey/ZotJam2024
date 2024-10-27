@@ -97,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9149250840919577159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a200f6e367283f545bde456be17a45d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 99e9f88b1f6a9704c93dac61d04219fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
@@ -107,7 +107,7 @@ MonoBehaviour:
   left: {fileID: 21300000, guid: 57ef2c6118b864246b4c2988cc2fa137, type: 3}
   right: {fileID: 21300000, guid: ed3b2057d699a439e9e48e911a4c4f10, type: 3}
   front: {fileID: 21300000, guid: 48c39f77b69d344459e64f515b121eb1, type: 3}
-  back: {fileID: 0}
+  back: {fileID: 21300000, guid: 11b44023af40f4f1dadee80eda7e93de, type: 3}
   BulletSpawnPoint: {fileID: 5339290170343591337}
   bullet: {fileID: 7152302733224740745, guid: cb1180925b6d4465997849a83622f660, type: 3}
   up: {x: 0, y: 1}
