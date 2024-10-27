@@ -9,4 +9,8 @@ public class DefeatButtons : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Main Menu 2");
     }
+    public void Restart()
+    {
+        SceneManager.LoadSceneAsync("GamePlay Scene");
+    }
 }
