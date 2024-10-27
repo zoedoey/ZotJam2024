@@ -588,7 +588,7 @@ MonoBehaviour:
   greyCrack: {fileID: 21300000, guid: 7fcbab06d3ea14c5e8b209a946e89a27, type: 3}
   redCrack: {fileID: 21300000, guid: 47b917825931642fe856ee249e493366, type: 3}
   spritePrefab: {fileID: 756584201}
-  exclusionRadius: 1
+  exclusionRadius: 3
 --- !u!212 &756584203
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -704,8 +704,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 756584203}
+  renderer2: {fileID: 0}
   greyCrack: {fileID: 21300000, guid: 3f7d17de6afa94fefbbb3b2497da0463, type: 3}
   redCrack: {fileID: 21300000, guid: 2f7671aa70b404346b09ec66587d9a36, type: 3}
+  backCrack: {fileID: 21300000, guid: 1e9796999234d454e9685e6d12b40c23, type: 3}
 --- !u!1001 &784104160
 PrefabInstance:
   m_ObjectHideFlags: 0
