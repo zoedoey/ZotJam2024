@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
+
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Animator animator;
@@ -12,17 +13,22 @@ public class EnemyMovement : MonoBehaviour
     public Sprite left;
     public Sprite right;
     public Sprite front;
+    public Sprite back;
+
+    //renderer.sprite = left
+    //
+    // add the back animation for up
+
     // Start is called before the first frame update
     //void Start()
     //{
         
     //}
 
-    // INVERT UP AND DOWN
-
     // Update is called once per frame
-    void Update() // updates the players movement
+    void Update()
     {
+        // * Time.deltaTime * moveSpeed
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         //transform.position = new Vector2(transform.position.x + movement.x, transform.position.y + movement.y);
@@ -35,7 +41,16 @@ public class EnemyMovement : MonoBehaviour
         {
             renderer.sprite = right;
         }
-        if (movement.x == 0)
+        if (movement.x == 0 && movement.y == 0)
+        {
+            renderer.sprite = front;
+        }
+        if (movement.y > 0)
+        {
+            renderer.sprite = back;
+            
+        }
+        if (movement.y < 0)
         {
             renderer.sprite = front;
         }
@@ -49,12 +64,12 @@ public class EnemyMovement : MonoBehaviour
         }
 
     }
-    void FixedUpdate() //fixes the update in terms of time/speed
+
+    void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
-    //Bullet mechanics
     public Transform BulletSpawnPoint;
     public GameObject bullet;
     public Vector2 up = new Vector2(0, 1);
@@ -72,4 +87,3 @@ public class EnemyMovement : MonoBehaviour
         Destroy(newBullet, 3);
     }
 }
-
