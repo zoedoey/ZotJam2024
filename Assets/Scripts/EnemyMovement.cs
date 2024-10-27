@@ -68,7 +68,7 @@ public class EnemyMovement : MonoBehaviour
     }
     void FixedUpdate() //fixes the update in terms of time/speed
     {
-        rb.MovePosition(rb.position + -movement.normalized * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
 }
