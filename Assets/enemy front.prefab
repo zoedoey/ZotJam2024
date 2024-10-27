@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3143741475273932079}
   - component: {fileID: 4756164841194781747}
   - component: {fileID: 669386429577448590}
+  - component: {fileID: 6081238483812769989}
   m_Layer: 0
   m_Name: enemy front
   m_TagString: Untagged
@@ -106,10 +107,12 @@ MonoBehaviour:
   left: {fileID: 21300000, guid: 57ef2c6118b864246b4c2988cc2fa137, type: 3}
   right: {fileID: 21300000, guid: ed3b2057d699a439e9e48e911a4c4f10, type: 3}
   front: {fileID: 21300000, guid: 48c39f77b69d344459e64f515b121eb1, type: 3}
-  BulletSpawnPoint: {fileID: 0}
-  bullet: {fileID: 0}
+  back: {fileID: 0}
+  BulletSpawnPoint: {fileID: 5339290170343591337}
+  bullet: {fileID: 7152302733224740745, guid: cb1180925b6d4465997849a83622f660, type: 3}
   up: {x: 0, y: 1}
   force: 10
+  counter: 0
 --- !u!50 &4756164841194781747
 Rigidbody2D:
   serializedVersion: 4
@@ -136,7 +139,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!111 &669386429577448590
 Animation:
   m_ObjectHideFlags: 0
@@ -152,3 +155,38 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!58 &6081238483812769989
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9149250840919577159}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.87
