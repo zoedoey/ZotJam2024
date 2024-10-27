@@ -580,8 +580,8 @@ MonoBehaviour:
   timer: 0
   spawnPoint: {x: 0, y: 0}
   renderer: {fileID: 756584203}
-  greyCrack: {fileID: 21300000, guid: 7fcbab06d3ea14c5e8b209a946e89a27, type: 3}
-  redCrack: {fileID: 21300000, guid: 47b917825931642fe856ee249e493366, type: 3}
+  greyCrack: {fileID: 21300000, guid: 3f7d17de6afa94fefbbb3b2497da0463, type: 3}
+  redCrack: {fileID: 21300000, guid: 2f7671aa70b404346b09ec66587d9a36, type: 3}
 --- !u!212 &756584203
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -623,7 +623,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7fcbab06d3ea14c5e8b209a946e89a27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f7d17de6afa94fefbbb3b2497da0463, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -696,6 +696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a835eaf9f3064949a6490f82524de22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 756584203}
+  redCrack: {fileID: 21300000, guid: 2f7671aa70b404346b09ec66587d9a36, type: 3}
 --- !u!1001 &784104160
 PrefabInstance:
   m_ObjectHideFlags: 0
