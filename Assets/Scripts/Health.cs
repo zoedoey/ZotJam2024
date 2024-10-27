@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
 
         if (health < 1)
         {
-            SceneManager.LoadSceneAsync("End Game Scene");
+            SceneManager.LoadSceneAsync("Defeat Screen");
         }
 
         for (int i = 0; i < hearts.Length; i++)
