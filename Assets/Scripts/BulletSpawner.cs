@@ -11,8 +11,15 @@ public class BulletSpawner : MonoBehaviour
     public float firingRate = 1f;
     public float timer = 0f;
 
+    [SerializeField] private AudioClip shotSoundClip;
+    private AudioSource audioSource;
     // Code tutorial from Sidereum Games
     // Update is called once per frame
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         timer += Time.deltaTime;
@@ -73,6 +80,9 @@ public class BulletSpawner : MonoBehaviour
     {
         if (bullet)
         {
+            audioSource.clip = shotSoundClip;
+            audioSource.PlayOneShot(shotSoundClip);
+    
             spawnedBullet = Instantiate(bullet, transform.position + offset, Quaternion.identity);
             spawnedBullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
             spawnedBullet.GetComponent<Bullet>().bulletLife = bulletLife;
