@@ -75,7 +75,7 @@ public class BulletSpawner : MonoBehaviour
             }
             if (type == 5) //row of five
             {
-                timer = 0.3f;
+                timer = 0.2f;
                 Fire(0);
                 Fire(0, new Vector2(2, 0));
                 Fire(0, new Vector2(-2, 0));
@@ -91,8 +91,8 @@ public class BulletSpawner : MonoBehaviour
                 Fire(0, new Vector2(-3, 0));
                 nextpatterntype = UnityEngine.Random.Range(0, 7);
             }
-            Fire(0, new Vector2(8, 0));
-            Fire(0, new Vector2(-8, 0));
+            Fire(0, new Vector2(6, 0));
+            Fire(0, new Vector2(-6, 0));
             if (timer == 6)
             {
                 Destroy(gameObject);
@@ -108,7 +108,7 @@ public class BulletSpawner : MonoBehaviour
             audioSource.PlayOneShot(shotSoundClip);
     
             spawnedBullet = Instantiate(bullet, transform.position + offset, Quaternion.identity);
-            spawnedBullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed * (1 + timer2/60);
+            spawnedBullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed * (1 + timer2/120);
             spawnedBullet.GetComponent<Bullet>().bulletLife = bulletLife;
             spawnedBullet.GetComponent<Bullet>().rotation = rotation;
             spawnedBullet.transform.rotation = transform.rotation;
