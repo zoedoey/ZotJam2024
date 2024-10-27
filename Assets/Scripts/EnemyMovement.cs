@@ -56,11 +56,6 @@ public class EnemyMovement : MonoBehaviour
         //animator.SetFloat("Vertical", movement.y);
         //animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
-
         if (Input.GetKey(KeyCode.UpArrow))
         {
             movement = Vector2.down;      // Move down when Up Arrow is pressed
@@ -73,25 +68,8 @@ public class EnemyMovement : MonoBehaviour
     }
     void FixedUpdate() //fixes the update in terms of time/speed
     {
-        rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + -movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
-    //Bullet mechanics
-    public Transform BulletSpawnPoint;
-    public GameObject bullet;
-    public Vector2 up = new Vector2(0, 1);
-    public float force = 10f;
-    public int counter;
-
-    void Shoot()
-    {
-        GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
-        newBullet.GetComponent<Rigidbody2D>().velocity = movement.normalized * force;
-        if (movement.x == 0 && movement.y == 0)
-        {
-            newBullet.GetComponent<Rigidbody2D>().velocity = up * force;
-        }
-        Destroy(newBullet, 3);
-    }
 }
 

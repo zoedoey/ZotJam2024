@@ -13,35 +13,12 @@ public class CrackSpawn : MonoBehaviour
     public Sprite redCrack;
 
 
-    public GameObject spritePrefab;
-    public float exclusionRadius = 10f; // Radius around the center to avoid
-
-    public void SpawnSprite()
-    {
-        Vector2 spawnPosition;
-
-        do
-        {
-            // Generate a random position within a defined area
-            spawnPosition = new Vector2(UnityEngine.Random.Range(-10f, 10f), UnityEngine.Random.Range(-10f, 10f));
-        }
-        while (IsInExclusionZone(spawnPosition));
-
-        // Instantiate the sprite at the valid position
-        Instantiate(spritePrefab, spawnPosition, Quaternion.identity);
-    }
-
-    private bool IsInExclusionZone(Vector2 position)
-    {
-        // Check if the position is within the exclusion radius of the center
-        return Vector2.Distance(position, Vector2.zero) < exclusionRadius; // Excludes positions within the exclusion radius from center
-    }
 
 
     Vector2 Movement(float timer)
     {
-        float x = UnityEngine.Random.Range(-6f, 6f); // Adjust range as needed
-        float y = UnityEngine.Random.Range(-6f, 6f); // Adjust range as needed
+        float x = UnityEngine.Random.Range(-8f, 8f); // Adjust range as needed
+        float y = UnityEngine.Random.Range(1f, 4f); // Adjust range as needed
 
         return new Vector2(x, y);
     }
