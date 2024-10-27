@@ -27,7 +27,8 @@ public class Bullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
+        transform.rotation = Quaternion.identity;
+        transform.Rotate(new Vector3(0, 0, Mathf.Atan2(rb.velocity.y, rb.velocity.x)) * Mathf.Rad2Deg);
         timer += Time.deltaTime;
         
     }
