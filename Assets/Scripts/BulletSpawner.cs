@@ -26,7 +26,7 @@ public class BulletSpawner : MonoBehaviour
         if (timer >= firingRate)
         {
             timer = 0;
-            int type = UnityEngine.Random.Range(0, 2);
+            int type = UnityEngine.Random.Range(0, 6);
             if (type == 0) //shotgun level 1
             {
                 Fire(0);
@@ -53,6 +53,7 @@ public class BulletSpawner : MonoBehaviour
             }
             if (type == 3) //shotgun level 3
             {
+                timer = -1;
                 Fire(0);
                 Fire(15);
                 Fire(30);
@@ -61,17 +62,25 @@ public class BulletSpawner : MonoBehaviour
                 Fire(-30);
                 Fire(-45);
             }
-            if (type == 4) //shotgun level 1
+            if (type == 4) //row of five
             {
                 Fire(0);
-                Fire(45);
-                Fire(-45);
+                Fire(0, new Vector2(2, 0));
+                Fire(0, new Vector2(-2, 0));
+                Fire(0, new Vector2(4, 0));
+                Fire(0, new Vector2(-4, 0));
+                type = 5;
             }
-            if (type == 5) //shotgun level 1
+            if (type == 5) //row of four
             {
-                Fire(0);
-                Fire(45);
-                Fire(-45);
+                Fire(0, new Vector2(1, 1));
+                Fire(0, new Vector2(-1, 1));
+                Fire(0, new Vector2(3, 1));
+                Fire(0, new Vector2(-3, 1));
+            }
+            if (timer == 6)
+            {
+                Destroy(gameObject);
             }
         }
     }
@@ -84,7 +93,7 @@ public class BulletSpawner : MonoBehaviour
             audioSource.PlayOneShot(shotSoundClip);
     
             spawnedBullet = Instantiate(bullet, transform.position + offset, Quaternion.identity);
-            spawnedBullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+            spawnedBullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed - 2;
             spawnedBullet.GetComponent<Bullet>().bulletLife = bulletLife;
             spawnedBullet.GetComponent<Bullet>().rotation = rotation;
             spawnedBullet.transform.rotation = transform.rotation;

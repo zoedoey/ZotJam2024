@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public float moveSpeed = 5f;
+    public float moveSpeed = 4f;
     public Rigidbody2D rb;
     public Animator animator;
     Vector2 movement;
@@ -14,13 +14,18 @@ public class PlayerMovement : MonoBehaviour {
     public Sprite right;
     public Sprite front;
     public Sprite back;
+    [SerializeField] private AudioClip damageSoundClip;
+    private AudioSource audioSource;
 
     //renderer.sprite = left
     //
 
 
     // Start is called before the first frame upd
-
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -59,5 +64,15 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.collider.CompareTag("Bullet"))
+        {
+            Debug.Log("Collided");
+            audioSource.clip = damageSoundClip;
+            audioSource.PlayOneShot(damageSoundClip);
+        }
     }
 }
