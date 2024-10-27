@@ -8,15 +8,16 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    public static Health instance;
     public int health;
     public int numOfHearts;
-
+    GameObject player;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
     void Update()
     {
-        
+        instance = this;
         for (int i = 0; i < hearts.Length; i++)
         {
             if (i < health)
