@@ -14,17 +14,12 @@ public class PlayerMovement : MonoBehaviour {
     public Sprite right;
     public Sprite front;
     public Sprite back;
-    public Camera camera;
 
     //renderer.sprite = left
     //
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        camera = Camera.main;
-    }
+    // Start is called before the first frame upd
 
     // Update is called once per frame
     void Update()
@@ -64,8 +59,6 @@ public class PlayerMovement : MonoBehaviour {
             Shoot();
         }
 
-        PreventPlayerFromGoingOffScreen();
-
     }
 
     void FixedUpdate()
@@ -88,15 +81,5 @@ public class PlayerMovement : MonoBehaviour {
             newBullet.GetComponent<Rigidbody2D>().velocity = up * force;
         }
         Destroy(newBullet, 3);
-    }
-
-    void PreventPlayerFromGoingOffScreen()
-    {
-        Vector2 screenPosition = camera.WorldToScreenPoint(transform.position);
-
-        if (screenPosition.x < 0 && rb.velocity.x < 0 || (screenPosition.x > camera.pixelWidth && rb.velocity.x > 0)) 
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        }
     }
 }
